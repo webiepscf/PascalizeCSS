@@ -1,0 +1,89 @@
+// ./pascalizeCSS/modules/_grid.scss 
+// MODULE DE GRILLE RESPONSIVE
+
+// GRID SYSTEM 12 colonnes
+.grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: $gapV $gapH;
+    &.grid-no-gap {
+        gap: 0 0;
+    }
+    > * {
+        grid-column: span 12;
+        grid-row: span 1;
+    }
+}
+
+// GRID SYSTEM pour ECRANS MOBILES
+.container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 1em;
+}
+
+@for $i from 1 through 12 {
+    .col-xs-#{$i} {
+        grid-column: span + ' ' + $i;
+    }
+    .row-xs-#{$i} {
+        grid-row: span + ' ' + $i;
+    }
+}
+
+
+// GRID SYSTEM pour ECRANS MEDIUM
+@media (min-width: 768px) {
+.container {
+    width: 720px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+@for $i from 1 through 12 {
+    .col-m-#{$i} {
+        grid-column: span + ' ' + $i;
+    }
+    .row-m-#{$i} {
+        grid-row: span + ' ' + $i;
+    }
+}
+}
+
+
+
+// GRID SYSTEM pour ECRANS LARGES
+@media (min-width: 992px) {
+.container {
+    width: 960px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+@for $i from 1 through 12 {
+    .col-l-#{$i} {
+        grid-column: span + ' ' + $i;
+    }
+    .row-l-#{$i} {
+        grid-row: span + ' ' + $i;
+    }
+}
+}
+
+// GRID SYSTEM pour ECRANS XL
+@media (min-width: 1200px) {
+.container {
+    width: 1140px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+@for $i from 1 through 12 {
+    .col-xl-#{$i} {
+        grid-column: span + ' ' + $i;
+    }
+    .row-xl-#{$i} {
+        grid-row: span + ' ' + $i;
+    }
+}
+}
